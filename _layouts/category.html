@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+
+<html lang="ru">
+	{% include head.html %}
+	
+	<body id="top" class="is-loading">
+		<div id="page-wrapper">
+		<!-- Header -->
+		{% include header.html %}
+
+		<!-- Nav -->
+		{% include nav.html %}
+
+		<!-- Banner -->
+		{% include banner-generic.html %}
+		
+		<!-- Main -->
+			<div id="not-main">
+				<article class="container">
+					<header class="align-center">
+						<style scoped>
+							.mh1 {
+								font-size: 1.3em;
+							}
+							@media (min-width: 360px) {
+								.mh1 {
+									font-size: 1.5em;
+								}
+							}
+						</style>
+						<h1 class=mh1>{{ page.page-title }}</h1>
+					</header>
+					<div class="row">
+						<div class="8u 12u(medium)">
+							<p>{{page.page-description}}</p>
+						</div>
+						<div class="4u 12u(medium)">
+							<ul class="actions vertical small align-left arrow-alt">
+								{% for category in site.proekty %}
+									{% if category.type == "category" %}
+										{% unless category.url contains page.url %}
+										<li><a href="{{category.url}}">{{category.page-short-title}}</a></li>
+										{% endunless %}
+									{% endif %}
+								{% endfor %}
+								<li><a href="/proekty/">Все проекты</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="front">
+						<div class="row uniform">
+						{% assign sorted_cat = site.proekty | sort: 'weight' %}
+						{% for project in sorted_cat %}
+							{% if project.type != "category" and project.url contains page.url %}
+								<div class="4u 6u(medium) 12u(xsmall)">
+									<div class="box alt">
+										<a href="{{project.url}}" class="image fit project">
+											<img src="/images/{{project.url}}-1-small.jpg" alt="{{project.tiny-description}}" title="{{project.project-catalog-title}}">
+											<div class="project-wrapper">
+												<h3>{{project.project-catalog-title}} <span>{{project.project-name}}</span></h3>
+												<p>{{project.tiny-description}}</p>
+											</div>
+										</a>
+										<h4><a href="{{project.url}}">{{project.project-name}}</a></h4>
+										{% if project.area %}
+										<h4 class="area">{{project.area}}м<sup>2</sup></h4>
+										{% endif %}
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+						</div>
+					</div>
+					<div class="row">
+						{{ content }}
+					</div>
+				</article>
+			</div>
+		{% include cta.html %}
+		<!-- Footer -->
+		{% include footer.html %}
+
+		<!-- Scripts -->
+		{% include scripts.html %}
+		</div>
+	</body>
+</html>

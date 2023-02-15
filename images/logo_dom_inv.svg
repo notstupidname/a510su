@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:#0E0F10;}
+	.st2{fill:#FFFFFF;}
+	.st3{display:inline;}
+	.st4{fill:#0E0F10;}
+</style>
+<g id="Layer_3" class="st0">
+	<polygon class="st1" points="422.6,961.5 422.6,730.4 231.8,587.3 41,730.4 41,961.5 	"/>
+	<polygon class="st1" points="959.9,961.5 959.9,730.4 769.2,587.3 578.4,730.4 578.4,961.5 	"/>
+	<polygon class="st1" points="959.9,424.2 959.9,193 769.2,49.9 578.4,193 578.4,424.2 	"/>
+</g>
+<g id="Layer_1">
+	<g id="LWPOLYLINE">
+		<polygon class="st2" points="231.8,13.6 451.6,178.5 451.6,453.2 12,453.2 12,178.5 		"/>
+	</g>
+	<g id="LWPOLYLINE-2">
+		<path class="st2" d="M769.2,49.9L960,193v231.1H578.4V193L769.2,49.9 M769.2,13.6L549.4,178.5v274.7H989V178.5L769.2,13.6
+			L769.2,13.6z"/>
+	</g>
+	<g id="LWPOLYLINE-3">
+		<path class="st2" d="M231.8,587.3l190.7,143.1v231.2H41.1V730.3L231.8,587.3 M231.8,551L12,715.8v274.8h439.7V715.8L231.8,551
+			L231.8,551L231.8,551z"/>
+	</g>
+	<g id="LWPOLYLINE-4">
+		<path class="st2" d="M769.2,587.3L960,730.4v231.2H578.4V730.3L769.2,587.3 M769.2,551L549.4,715.8v274.8H989V715.8L769.2,551
+			L769.2,551L769.2,551z"/>
+	</g>
+</g>
+<g id="Layer_2" class="st0">
+	<g class="st3">
+		<path class="st4" d="M231.8,13.6l219.8,164.9v274.7H12V178.5L231.8,13.6 M231.8,1.1l-6,4.5L6,170.5l-4,3v5v274.7v10h10h439.6h10
+			v-10V178.5v-5l-4-3L237.8,5.6L231.8,1.1L231.8,1.1z"/>
+	</g>
+	<g class="st3">
+		<path class="st4" d="M769.2,13.6L989,178.5v274.7H549.4V178.5L769.2,13.6 M769.2,1.1l-6,4.5L543.4,170.5l-4,3v5v274.7v10h10H989
+			h10v-10V178.5v-5l-4-3L775.2,5.6L769.2,1.1L769.2,1.1z"/>
+	</g>
+	<g class="st3">
+		<path class="st4" d="M231.8,550.9l219.8,164.9v274.7H12V715.8L231.8,550.9 M231.8,538.4l-6,4.5L6,707.8l-4,3v5v274.7v10h10h439.6
+			h10v-10V715.8v-5l-4-3L237.8,542.9L231.8,538.4L231.8,538.4z"/>
+	</g>
+	<g class="st3">
+		<path class="st4" d="M769.2,550.9L989,715.8v274.7H549.4V715.8L769.2,550.9 M769.2,538.4l-6,4.5L543.4,707.8l-4,3v5v274.7v10h10
+			H989h10v-10V715.8v-5l-4-3L775.2,542.9L769.2,538.4L769.2,538.4z"/>
+	</g>
+</g>
+</svg>

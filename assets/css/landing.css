@@ -1,0 +1,7 @@
+
+@media screen and (max-width: 480px) {
+
+	.mobile-full {
+		width: 100% !important;
+	}
+}

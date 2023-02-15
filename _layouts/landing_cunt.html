@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+
+<html lang="ru">
+	{% include head-landing.html %}
+	
+	<body id="top" class="is-loading" style="padding-top:0">
+		<div id="page-wrapper">
+		<!-- Header -->
+		<style type="text/css">
+			body{
+				background-color: #0E0F10;
+				color: #fff;
+			}
+
+			#footer {
+				background: #0E0F10;
+				color: #fff;
+				margin: 0;
+			}
+
+			#nav, #nav header a, #nav .close{
+				background-color: #0E0F10;
+				color: #fff;
+			}
+
+			#nav .close::before, #nav .close::after{
+				background-color: #fff;
+			}
+			
+			#header{
+				position:absolute;
+				background-color: #0E0F10;
+				color: #fff;
+			}
+			.small-table{
+				font-size:90%;
+			}
+			.small-table td{
+				padding:0.25em;
+			}
+			.small-table tr td:nth-child(2) {
+				text-align:left;
+				font-weight:400;
+			}
+			.small-table tr td:nth-child(3) {
+				text-align:right;
+			}
+			.big-table td{
+				padding:0.45em;
+			}
+			.big-table tr td:nth-child(2) {
+				text-align:right;
+				font-weight:400;
+				text-transform:uppercase;
+			}
+			.med-table tr td:nth-child(2) {
+				text-align:right;
+				font-weight:400;
+				text-transform:none;
+			}
+			.med-table tr td:nth-child(1) {
+				text-align:left;
+				font-weight:400;
+				text-transform:uppercase;
+			}
+			p {
+				margin-bottom:0.5em;
+			}
+			h3 {
+				text-align:right;
+			}
+
+			.vignette {
+				-webkit-box-shadow: inset 0px 0px 85px rgba(0,0,0,0.4);
+				-moz-box-shadow:    inset 0px 0px 85px rgba(0,0,0,0.4);
+				box-shadow:         inset 0px 0px 85px rgba(0,0,0,0.4);
+				
+				line-height: 0;         /* ensure no space between bottom */
+					
+				display: inline-block;  /* don't go wider than image */
+			}
+			.vignette img {
+				position: relative; 
+				z-index: -1;            /* position beneath */
+				filter: saturate(0.8);
+			}
+			@media screen and (max-width: 980px){
+				h3 {
+					text-align:center;
+				}
+			}
+
+			.banner:before {
+				background-color: rgba(0,0,0,.6);
+			}
+
+			@media screen and (max-width: 980px){
+				.full_width_mobile {
+					width: 100%!important;
+				}
+			}
+
+			.pic_header {
+				margin-top: 1.5em;
+				margin-bottom: 0.5em;
+				letter-spacing: 0.05em;
+				font-size: 1.4em;
+			}
+
+			@media screen and (max-width: 980px){
+				.pic_header {
+					font-size: 1.25em;
+				}
+			}
+		</style>
+		{% include header_black.html %}
+
+		<!-- Nav -->
+		{% include nav.html %}
+
+		<!-- Banner -->
+		<!-- {% include banner-generic.html %} -->
+		<div class="banner" style="background-image: url('/images/landing_cunt/2108_banner.jpg');min-height:100vh">
+			<div class="inner">
+				<h2 style="line-height:1.5em;letter-spacing:0.025em;">ВЛАДЫЧИНО </br><b style="font-size:1.3em;">РЕКОНСТРУКЦИЯ</b></h2>
+			</div>
+		</div>
+		<!-- Main -->
+			<div id="not-main">
+				<article style="margin-top:2em">
+					<!-- <header class="align-center">
+						<h1>{{ page.page-title }}</h1>
+					</header> -->
+					{{ content }}
+				</article>
+			</div>
+
+		<!-- Scripts -->
+		{% include scripts.html %}
+		<script src="/assets/js/cocoen.min.js"></script>
+		<script src="/assets/js/cocoen-jquery.min.js"></script>
+		<script>
+			$('.cocoen').cocoen();
+		</script>
+		</div>
+	</body>
+</html>

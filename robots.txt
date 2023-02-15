@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /lndwrk*
+Host: https://a510.su
+Sitemap: https://a510.su/sitemap.xml

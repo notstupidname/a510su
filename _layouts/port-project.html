@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<html lang="ru">
+	{% include head.html %}
+	
+	<body id="top" class="is-loading">
+		<div id="page-wrapper">
+		<!-- Header -->
+		{% include header.html %}
+
+		<!-- Nav -->
+		{% include nav.html %}
+
+		<!-- Main -->
+			<div id="not-main">
+				<div class="container banner-product">
+					{% assign img_array = "" | split:"," %}
+					{% assign url_list = page.url | split: "/" %}
+					{% assign project-name = url_list | last %}
+					{% for file in site.static_files %}
+						{% if file.path contains project-name %}
+							{% assign img_array = img_array | push: file.path %}
+						{% endif %}
+					{% endfor %}
+					<div class="slider">
+						{% for img in img_array %}
+							{% unless img contains "plan" %}
+								{% unless img contains "small" %}
+									{% unless img contains "pdf" %}
+										<div class="image fit"><img src="{{img}}" alt="{{page.project-title}}-{{forloop.index}}"></div>
+									{% endunless %}
+								{% endunless %}
+							{% endunless %}
+						{% endfor %}
+					</div>
+				</div>
+				<article class="container">
+					<header class="align-left">
+						<h1>{{ page.project-title }}</h1>
+					</header>
+					<div class="row">
+						<div class="7u 12u(small)">
+							<p>{{ page.short-description }}</p>
+						</div>
+						<div class="5u 12u(small)">
+							<div class="table-wrapper">
+								<table>
+									<tbody>
+										{% for option in page.options %}
+										<tr>
+											<td>{{ option.name }}</td>
+											<td>{{ option.value }}</td>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<footer class="align-center">
+						<div class="row">
+							<div class="4u -4u 6u(medium) -3u(medium) 10u(small) -1u(small) 12u(xsmall)">
+								<ul class="actions vertical">
+									<li><a class="button fit" href="/architektura">Как заказать проект</a></li>
+									<li><a class="button alt fit" href="/portfolio">Вернуться в портфолио</a></li>
+								</ul>
+							</div>
+						</div>
+					</footer>
+				</article>
+			</div>
+		{% include cta.html %}
+		<!-- Footer -->
+		{% include footer.html %}
+
+		<!-- Scripts -->
+		{% include scripts.html %}
+		</div>
+	</body>
+</html>

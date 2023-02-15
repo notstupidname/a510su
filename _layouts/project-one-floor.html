@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+
+<html lang="ru">
+	{% include head.html %}
+	
+	<body id="top" class="is-loading">
+		<div id="page-wrapper">
+		<!-- Header -->
+		{% include header.html %}
+
+		<!-- Nav -->
+		{% include nav.html %}
+
+		<!-- Main -->
+			<div id="not-main">
+				<div class="container banner-product">
+					{% assign img_array = "" | split:"," %}
+					{% assign url_list = page.url | split: "/" %}
+					{% assign project-name = url_list | last %}
+					{% for file in site.static_files %}
+						{% if file.path contains project-name %}
+							{% assign img_array = img_array | push: file.path %}
+						{% endif %}
+					{% endfor %}
+					<div class="slider">
+						{% for img in img_array %}
+							{% unless img contains "plan" %}
+								{% unless img contains "small" %}
+									{% unless img contains "pdf" %}
+										<div class="image fit"><img src="{{img}}" alt="{{page.project-title}}-{{page.project-name}}-{{forloop.index}}"></div>
+									{% endunless %}
+								{% endunless %}
+							{% endunless %}
+						{% endfor %}
+					</div>
+				</div>
+				<article class="container">
+					
+					
+						<header class="align-left">
+							<h1>{{ page.project-title }} {{page.project-name}}</h1>
+						</header>
+						
+ 						<div class="row">
+							<div class="7u 12u(medium)">
+								
+									<p>{{ page.short-description }}</p>
+									<h4><b><i class="fa fa-caret-right" aria-hidden="true"></i> Проект: {{ page.price-project }}</b></h4>
+									{% if page.price-build %}
+									<h4><i class="fa fa-caret-right" aria-hidden="true"></i> Стройка: {{ page.price-build }}</h4>
+									{% endif %}
+								
+							</div>
+							<div class="3u -1u 6u(medium) -3u(medium) 8u(small) -2u(small) 12u(xsmall)">
+								
+									<ul class="actions vertical">
+										<li><span class="button fit modal-open" data-modal="modal-order">Заказать проект</span></li>
+										<li><span class="button alt fit modal-open" data-modal="modal-question">Задать вопрос</span></li>
+									</ul>
+								
+							</div>
+						</div>
+						<div class="row uniform">
+							<div class="7u 12u(medium)">
+								{% assign index = 1 %}
+								{% for img in img_array %}
+									{% if img contains "plan" %}
+									<h3>План {{index}}-го этажа</h3>
+									<div class="image plan"><img src="{{img}}" alt="Планирока {{index}}-го этажа в проекте {{page.project-title}} {{page.project-name}}"></div>
+									{% assign index = index | plus:1 %}
+									{% endif %}
+								{% endfor %}
+								{% if content.size > 4 %}
+								<section>
+									<h3>О проекте</h3>
+									{{ content }}
+								</section>
+								{% endif %}
+							</div>
+							<div class="5u 12u(medium)">
+								<h3>Технические параметры</h3>
+								<div class="table-wrapper">
+									<table class="">
+										<tbody>
+											{% for param in page.params %}
+											<tr>
+												<td>{{ param.name }}</td>
+												<td>{{ param.value }}</td>
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+								{% assign album-name = page.project-name | downcase | append: '-album.pdf' %}
+								{% assign present-name = page.project-name | downcase | append: '-present.pdf' %}
+								{% for file in site.static_files %}
+									{% if file.path contains album-name %}
+										{% assign album-link = file.path %}
+									{% endif %}
+									{% if file.path contains present-name %}
+										{% assign present-link = file.path %}
+									{% endif %}
+								{% endfor %}
+								<div class="row">
+									<div class="10u -1u 12u(small)">
+										<ul class="actions vertical small align-left arrow">
+											{% if album-link %}
+											<li><a href="{{album-link}}">Скачать альбом проекта</a></</li>
+											{% endif %}
+											{% if present-link %}
+											<li><a href="{{present-link}}">Скачать презентацию</a></</li>
+											{% endif %}
+										</ul>
+									</div>
+								</div>
+								<h3>Дополнительные опции</h3>
+								<div class="table-wrapper">
+									<table class="price">
+										<tbody>
+											{% for option in page.options %}
+											<tr>
+												<td>{{ option.name }}</td>
+												<td>{{ option.value }}</td>
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+								<div class="row">
+									<div class="10u -1u 6u(medium) -3u(medium) 8u(small) -2u(small) 12u(xsmall)">
+										
+											<ul class="actions vertical">
+												<li><span class="button fit modal-open" data-modal="modal-order">Заказать проект</span></li>
+											</ul>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+												
+					
+					<section>
+						<header>
+							<h3 class="align-center">Похожие проекты</h3>
+						</header>
+						<div class="row uniform">
+							{% if page.related %}
+								{% for rel-project in page.related %}
+									{% for project in site.proekty %}
+										{% if project.project-name == rel-project %}
+											<div class="4u 6u(medium) 12u(xsmall)">
+												<div class="box alt">
+													<a href="{{project.url}}" class="image fit project">
+														<img src="/images/{{project.url}}-1-small.jpg" alt="{{project.tiny-description}}" title="{{project.project-catalog-title}}">
+														<div class="project-wrapper">
+															<h3>{{project.project-catalog-title}} <span>{{project.project-name}}</span></h3>
+															<p>{{project.tiny-description}}</p>
+														</div>
+													</a>
+													<h4><a href="{{project.url}}">{{project.project-name}}</a></h4>
+													{% if project.area %}
+													<h4 class="area">{{project.area}}м<sup>2</sup></h4>
+													{% endif %}
+												</div>
+											</div>
+										{% endif %}
+									{% endfor %}
+								{% endfor %}
+							{% else %}
+								{% assign sorted_cat = site.proekty | sort: 'weight' %}
+								{% assign i = 0 %}
+								{% for project in sorted_cat %}
+									{% if project.type != "category" and project.featured %}
+										{% assign i = i | plus: 1 %}
+										{% if i > 3 %}
+											{% break %}
+										{% endif %}
+										<div class="4u 6u(medium) 12u(xsmall)">
+											<div class="box alt">
+												<a href="{{project.url}}" class="image fit project">
+													<img src="/images/{{project.url}}-1-small.jpg" alt="{{project.tiny-description}}" title="{{project.project-catalog-title}}">
+													<div class="project-wrapper">
+														<h3>{{project.project-catalog-title}} <span>{{project.project-name}}</span></h3>
+														<p>{{project.tiny-description}}</p>
+													</div>
+												</a>
+												<h4><a href="{{project.url}}">{{project.project-name}}</a></h4>
+												{% if project.area %}
+												<h4 class="area">{{project.area}}м<sup>2</sup></h4>
+												{% endif %}
+											</div>
+										</div>
+									{% endif %}
+								{% endfor %}
+							{% endif %}
+						</div>
+						<footer class="align-center">
+							<ul class="actions">
+								<li><a class="button alt" href="/proekty/">Смотреть все проекты</a></li>
+							</ul>
+						</footer>
+					</section>
+					
+				</article>
+			</div>
+		{% include cta.html %}
+		<!-- Footer -->
+		{% include footer.html %}
+
+		<!-- Scripts -->
+		{% include scripts.html %}
+		</div>
+	</body>
+</html>

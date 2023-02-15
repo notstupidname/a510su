@@ -1,0 +1,11 @@
+<header id="header">
+	<ul>
+		<li><a href="/" class="logo"><img src="/images/logo2.svg" alt="Архитектурное бюро А510"></a></li>
+		<li class="menu-item"><a {% if page.url contains "/proekty" %}class="active"{% endif %} href="/proekty/">Проекты</a></li>
+		<li class="menu-item"><a {% if page.url contains "/stroyka" %}class="active"{% endif %} href="/stroyka">Стройка</a></li>
+		<li class="menu-item"><a {% if page.url contains "/architektura" %}class="active"{% endif %} href="/architektura">Архитектура</a></li>
+		<li class="menu-item"><a {% if page.url contains "/contact" %}class="active"{% endif %} href="/contact">Контакты</a></li>
+		<li><a href="tel:+7(495)532-70-54" class="phone"><span>+7&nbsp;(495)&nbsp;532-70-54</span></a></li>
+		<li><a href="#nav"></a></li>
+	</ul>
+</header>

@@ -1,0 +1,148 @@
+---
+title: Архитектурное бюро А510 - Контакты
+description: Контактная информация и схема проезда в архитектурно-строительную компанию А510
+layout: generic
+permalink: /contact
+
+page-title: Контакты
+---
+						<div class="row">
+							<div class="6u 12u(small)">
+								<section itemscope itemtype="http://schema.org/GeneralContractor">
+									<header>
+										<h3  itemprop="name">Компания А510</h3>
+										<meta itemprop="image" content="http://a510.su/images/logo2.svg">
+										<meta itemprop="priceRange" content="$">
+									</header>
+									<ul class="alt">
+										<li><i class="fa fa-phone">&nbsp;</i><a href="tel:+7(495)532-70-54"><span itemprop="telephone">+7&nbsp;(495)&nbsp;532-70-54</span></a></li>
+										<li><i class="fa fa-envelope-o">&nbsp;</i><a href="mailto:info@a510.su"><span itemprop="email">info@a510.su</span></a></li>
+										<li><div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><i class="fa fa-map-marker">&nbsp;</i><span itemprop="postalCode">142190</span> <span itemprop="addressLocality">Москва, Троицк</span>, <span itemprop="streetAddress">Физическая 13, оф. 77</span></div></li>
+										<li><i class="fa fa-clock-o">&nbsp;</i><data itemprop="openingHours" value="Mo-Fri 10:00−20:00"> Пн-Пт, 10:00-20:00.</data></li>
+									</ul>
+								</section>
+							</div>
+							<div class="6u 12u(small)">
+								<section>
+									<header>
+										<h3>Написать нам</h3>
+									</header>
+									<form action="#" class="ajax-form">
+										<div class="row uniform 50%">
+											<div class="6u 12u(small)">
+												<input type="text" class="name" name="name" placeholder="Ваше имя*" required>
+											</div>
+											<div class="6u$ 12u(small)">
+												<input type="email" class="email" name="email" placeholder="Е-mail*" required>
+											</div>
+											<div class="12u$">
+												<textarea rows="3" name="message" class="message" placeholder="Ваше сообщение*" required></textarea>
+											</div>
+											<input style="display:none" type="text" name="page" value="https://a510.ru{{page.url}}">
+											<input style="display:none" type="email" name="mail_to" value="info@a510.ru">
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" class="submit button fit" value="Отправить"></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+									<div class="form-succes" style="display:none;">
+										 <h3>Спасибо!</h3>
+										 <p>Мы свяжемся с Вами в самое ближайшее время!</p>
+									</div>
+									<div class="form-error" style="display:none;">
+										 <h3>Ой!</h3>
+										 <p>Что-то пошло не так. Попробуйте отправить заказ чуть позже или просто позвоните нам.</p>
+									</div>
+								</section>
+							</div>
+						</div>
+					
+						<div id='map'></div>
+						<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCRZ287SLI6Flr2HWzKJgAzo__-5ScvU4I&extension=.js'></script> 
+						 
+						<script> 
+							google.maps.event.addDomListener(window, 'load', init);
+							var map;
+							function init() {
+								var mapOptions = {
+									center: new google.maps.LatLng(55.477585,-322.682634),
+									zoom: 10,
+									zoomControl: true,
+									zoomControlOptions: {
+										style: google.maps.ZoomControlStyle.LARGE,
+									},
+									disableDoubleClickZoom: false,
+									mapTypeControl: false,
+									mapTypeControlOptions: {
+										style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+									},
+									scaleControl: false,
+									scrollwheel: false,
+									panControl: false,
+									streetViewControl: false,
+									draggable : !('ontouchend' in document),
+									overviewMapControl: false,
+									overviewMapControlOptions: {
+										opened: false,
+									},
+									mapTypeId: google.maps.MapTypeId.ROADMAP,
+									styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}],
+								}
+								var mapElement = document.getElementById('map');
+								var map = new google.maps.Map(mapElement, mapOptions);
+								var locations = [
+						['А510', 'г. Москва, г. Троицк, ул. Физическая, д. 13', '+7(495)123-45-67', 'info@a510.ru', 'a510.ru', 55.464401, 37.29058599999996, '/images/solid-pin-black.png']
+								];
+								for (i = 0; i < locations.length; i++) {
+									if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+									if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+									if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+								   if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+								   if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+									marker = new google.maps.Marker({
+										icon: markericon,
+										position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+										map: map,
+										title: locations[i][0],
+										desc: description,
+										tel: telephone,
+										email: email,
+										web: web
+									});
+						if (web.substring(0, 7) != "http://") {
+						link = "http://" + web;
+						} else {
+						link = web;
+						}
+									bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
+							 }
+						 function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
+							  var infoWindowVisible = (function () {
+									  var currentlyVisible = false;
+									  return function (visible) {
+										  if (visible !== undefined) {
+											  currentlyVisible = visible;
+										  }
+										  return currentlyVisible;
+									   };
+								   }());
+								   iw = new google.maps.InfoWindow();
+								   google.maps.event.addListener(marker, 'click', function() {
+									   if (infoWindowVisible()) {
+										   iw.close();
+										   infoWindowVisible(false);
+									   } else {
+										   var html= "<div style='color:#100e11;background-color:#fff;padding:5px;width:250px;'><h4>"+title+"</h4><p>"+desc+"<p><p>"+telephone+"<p><a href='mailto:"+email+"' >"+email+"<a><a href='"+link+"'' >"+web+"<a></div>";
+										   iw = new google.maps.InfoWindow({content:html});
+										   iw.open(map,marker);
+										   infoWindowVisible(true);
+									   }
+								});
+								google.maps.event.addListener(iw, 'closeclick', function () {
+									infoWindowVisible(false);
+								});
+						 }
+						}
+						</script>

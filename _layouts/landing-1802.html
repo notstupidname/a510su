@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html lang="ru">
+	{% include head-landing.html %}
+	
+	<body id="top" class="is-loading" style="padding-top:0">
+		<div id="page-wrapper">
+		<!-- Header -->
+		<style type="text/css">
+			#header{
+				position:absolute;
+			}
+			.small-table{
+				font-size:90%;
+			}
+			.small-table td{
+				padding:0.25em;
+			}
+			.small-table tr td:nth-child(2) {
+				text-align:left;
+				font-weight:400;
+			}
+			.small-table tr td:nth-child(3) {
+				text-align:right;
+			}
+			.big-table td{
+				padding:0.45em;
+			}
+			.big-table tr td:nth-child(2) {
+				text-align:right;
+				font-weight:400;
+				text-transform:uppercase;
+			}
+			.med-table tr td:nth-child(2) {
+				text-align:right;
+				font-weight:400;
+				text-transform:none;
+			}
+			.med-table tr td:nth-child(1) {
+				text-align:left;
+				font-weight:400;
+				text-transform:uppercase;
+			}
+			p {
+				margin-bottom:0.5em;
+			}
+			h3 {
+				text-align:right;
+			}
+			@media screen and (max-width: 980px){
+				h3 {
+					text-align:center;
+				}
+			}
+		</style>
+		{% include header.html %}
+
+		<!-- Nav -->
+		{% include nav.html %}
+
+		<!-- Banner -->
+		<!-- {% include banner-generic.html %} -->
+		<div class="banner" style="background-image: url('/images/landing-1802/banner.jpg');min-height:100vh">
+			<div class="inner">
+				<h2 style="line-height:1.5em">Ваш дом </br><b>Ваш выбор</b></h2>
+				<!-- <p>Живите рядом с теми, кого любите</p> -->
+				<!-- <ul class="actions"> -->
+					<!-- <li><a href="/proekty/taunhausy-dupleksy/" class="button special">Выбрать дуплекс</a></li> -->
+				<!-- </ul> -->
+			</div>
+		</div>
+		<!-- Main -->
+			<div id="not-main">
+				<article style="margin-top:2em">
+					<header class="container align-center">
+						<h1>{{ page.page-title }}</h1>
+					</header>
+					{{ content }}
+				</article>
+			</div>
+		
+		<!-- {% include cta-landing.html %} -->
+		<!-- Footer -->
+		{% include footer.html %}
+
+		<!-- Scripts -->
+		{% include scripts.html %}
+		<script src="/assets/js/cocoen.min.js"></script>
+		<script src="/assets/js/cocoen-jquery.min.js"></script>
+		<script>
+			$('.cocoen').cocoen();
+		</script>
+		</div>
+	</body>
+</html>
