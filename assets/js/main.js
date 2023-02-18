@@ -220,9 +220,7 @@
 						}).done(function(data) {
 							$('.form-loading').hide();
 							$(".form-succes").fadeIn("400");
-							yaCounter24649415.reachGoal('lead');
-							ga('send', 'event', 'form', 'lead');
-							fbq('track', 'Lead');
+							ym(92482398,'reachGoal','lead');
 						}).fail(function(data) {
 							$('.form-loading').hide();
 							$(".form-error").fadeIn("400");
