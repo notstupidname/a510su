@@ -215,7 +215,7 @@
 				$(".form-loading").fadeIn("400");
 				$.ajax({
 					dataType: "jsonp",
-					url: "https://script.google.com/macros/s/AKfycbzsBxQ_0rkFBSPUoWywnvdjUfyippHomxBDDRHV2hpTmWIrYNc/exec",
+					url: "https://script.google.com/macros/s/AKfycbzkpUfBUn5fRIgLsjXChciOQqo4eSW7rPBumBWDF1JsT7Z_jBvw4jtD2krxl8fS7NCj/exec",
 					data: form.serialize()
 						}).done(function(data) {
 							$('.form-loading').hide();
