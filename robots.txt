@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /lndwrk*
+Clean-param: __cf_chl_tk&__cf_chl_rt_tk
 Host: https://a510.su
 Sitemap: https://a510.su/sitemap.xml
